@@ -19,6 +19,9 @@
 }
 
 
+.hidden {
+    display: none;
+}
 
 .container {
   max-width: 800px;
@@ -223,6 +226,27 @@ main {
     }
   }
 
+  .filter-row{
+    
+    .filter-btn{
+      height: 30px;
+      width: 60px;
+      font-size: clamp(.25rem ,5vw ,.75rem);
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      background-color: #E0DDD8 ;
+      border: none;
+      transition: var(--transition);
+      cursor: pointer;
+
+      &:hover{
+        background-color: rgb(0, 0, 0);
+        color: #faf9f9;
+      }
+    }
+
+    
+  }
 
   .grid-room {
     display: grid;
@@ -351,8 +375,18 @@ main {
         grid-template-columns: 1fr;
         margin: 2rem;
       }
+
+      .filter-row{
+        button{
+          margin-bottom: -1rem;
+        }
+        button:first-child{
+          margin-left: 2rem;
+        }
+      }
   }
 }
+
 
 
 .option {
@@ -416,3 +450,4 @@ footer {
     font-size: clamp(.5rem, 5vw, .75rem);
   }
 }
+

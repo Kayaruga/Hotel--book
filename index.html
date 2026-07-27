@@ -53,65 +53,74 @@
     <div class="container">
       <div class="room">
         <div class="room-top">
-          <span>ห้องที่ว่างอยู่</span>
+          <span>ห้องพักของเรา</span>
           <a class="btn-room" href="#">ดูทั้งหมด--></a>
         </div>
-        <div class="grid-room">
-          <div class="grid-item">
-            <div class="room-img">
-              <img src="img/hotel.jpg" alt="room-img">
-            </div>
-            <div class="room-wrapper">
+        <div class="filter-row">
+          <button class="filter-btn active" onclick="filterRooms('all', this)">ทั้งหมด</button>
+          <button class="filter-btn" onclick="filterRooms('available', this)">ว่างอยู่</button>
+          <button class="filter-btn" onclick="filterRooms('standard', this)">Standard</button>
+          <div class="grid-room">
+            <!-- room1 -->
+            <div class="grid-item" data-status="available" data-type="standard">
+              <div class="room-img">
+                <img src="img/hotel.jpg" alt="room-img">
+              </div>
+              <div class="room-wrapper">
 
-              <div class="room-about">
-                <span>standard</span>
-                <h3>ห้องมาตรฐาน</h3>
-                <p>เตียงเดี่ยว 20 ตร.ม วิวสวน <br> รองรับ 1-2 ท่าน </p>
-              </div>
-              <div class="room-info">
-                <span>590 B/คืน</span>
-                <button>จองเลย</button>
+                <div class="room-about">
+                  <span>standard</span>
+                  <h3>ห้องมาตรฐาน</h3>
+                  <p>เตียงเดี่ยว 20 ตร.ม วิวสวน <br> รองรับ 1-2 ท่าน </p>
+                </div>
+                <div class="room-info">
+                  <span>590B/คืน</span>
+                  <button onclick="openModal('ห้องมาตรฐาน','590')">จองเลย</button>
+                </div>
               </div>
             </div>
-          </div>
+            <!-- room2 -->
+            <div class="grid-item" data-status="available" data-type="standard">
+              <div class="room-img">
+                <img src="img/hotel.jpg" alt="room-img">
+              </div>
+              <div class="room-wrapper">
 
-          <div class="grid-item">
-            <div class="room-img">
-              <img src="img/hotel.jpg" alt="room-img">
+                <div class="room-about">
+                  <span>standard</span>
+                  <h3>ห้องมาตรฐาน</h3>
+                  <p>เตียงเดี่ยว 20 ตร.ม วิวสวน <br> รองรับ 1-2 ท่าน </p>
+                </div>
+                <div class="room-info">
+                  <span>590 B/คืน</span>
+                  <button>จองเลย</button>
+                </div>
+              </div>
             </div>
-            <div class="room-wrapper">
 
-              <div class="room-about">
-                <span>standard</span>
-                <h3>ห้องมาตรฐาน</h3>
-                <p>เตียงเดี่ยว 20 ตร.ม วิวสวน <br> รองรับ 1-2 ท่าน </p>
+            <!-- room3 -->
+            <div class="grid-item" data-status="full" data-type="Suite">
+              <div class="room-img">
+                <img src="img/hotel.jpg" alt="room-img">
               </div>
-              <div class="room-info">
-                <span>590 B/คืน</span>
-                <button>จองเลย</button>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item">
-            <div class="room-img">
-              <img src="img/hotel.jpg" alt="room-img">
-            </div>
-            <div class="room-wrapper">
+              <div class="room-wrapper">
 
-              <div class="room-about">
-                <span>Suite</span>
-                <h3>ห้องสวีท</h3>
-                <p>เตียง King · 52 ตร.ม. · วิวดอย
-                  <br> รองรับ 2-4 ท่าน
-                </p>
-              </div>
-              <div class="room-info-sweet">
-                <span>1890 B/คืน</span>
-                <button>เต็มแล้ว</button>
+                <div class="room-about">
+                  <span>Suite</span>
+                  <h3>ห้องสวีท</h3>
+                  <p>เตียง King · 52 ตร.ม. · วิวดอย
+                    <br> รองรับ 2-4 ท่าน
+                  </p>
+                </div>
+                <div class="room-info-sweet">
+                  <span>1890 B/คืน</span>
+                  <button>เต็มแล้ว</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        
 
 
         <div class="option">
@@ -145,6 +154,8 @@
     </div>
     <span>© 2025 StayAlone · เชียงใหม่</span>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
