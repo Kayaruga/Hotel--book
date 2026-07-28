@@ -19,4 +19,24 @@ function filterRooms(type, btn) {
     })
 }
 
+function openModal(roomname, price) {
+    document.getElementById('modal-title').textContent = roomname;
+    document.getElementById('modal-info').textContent =  `${roomname} วิวดีสะอาดเหมาะกับการเที่ยว`
+    document.getElementById('modal-price').textContent = price + 'บาท';
+    document.getElementById('modal-body').classList.remove('hide');
+    document.getElementById('modal-success').classList.remove('show');
+    document.getElementById('modal-overlay').classList.add('open');
+}
+
+function CloseModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+}
+
+
+function Confirm() {
+    document.getElementById('modal-body').classList.add('hide');
+    document.getElementById('modal-success').classList.add('show');
+    setTimeout(() => CloseModal(), 2000);
+}
+
 
