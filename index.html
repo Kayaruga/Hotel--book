@@ -32,17 +32,17 @@
     <div class="search-box">
       <div class="check-box">
         <label for="">เช็คอิน</label>
-        <input type="date">
+        <input  id="check-in" type="date">
       </div>
       <div class="check-box">
         <label for="">เช็คเอาท์</label>
-        <input type="date">
+        <input id="check-out" type="date">
       </div>
       <div class="check-box">
         <label for="">จำนวนผู้เข้าพัก</label>
-        <input value="1" min="1" type="number">
+        <input id="guests" value="1" min="1" type="number">
       </div>
-      <button>ค้นหา</button>
+      <button id="search-btn">ค้นหา</button>
     </div>
   </section>
 
@@ -60,9 +60,10 @@
           <button class="filter-btn active" onclick="filterRooms('all', this)">ทั้งหมด</button>
           <button class="filter-btn" onclick="filterRooms('available', this)">ว่างอยู่</button>
           <button class="filter-btn" onclick="filterRooms('standard', this)">Standard</button>
+          <p id="search-result"></p>
           <div class="grid-room">
             <!-- room1 -->
-            <div class="grid-item" data-status="available" data-type="standard">
+            <div class="grid-item " data-status="available" data-type="standard" data-cap="2">
               <div class="room-img">
                 <img src="img/hotel.jpg" alt="room-img">
               </div>
@@ -80,7 +81,7 @@
               </div>
             </div>
             <!-- room2 -->
-            <div class="grid-item" data-status="available" data-type="standard">
+            <div class="grid-item" data-status="available" data-type="standard" data-cap="5">
               <div class="room-img">
                 <img src="img/hotel.jpg" alt="room-img">
               </div>
@@ -88,18 +89,18 @@
 
                 <div class="room-about">
                   <span>standard</span>
-                  <h3>ห้องมาตรฐาน</h3>
-                  <p>เตียงเดี่ยว 20 ตร.ม วิวสวน <br> รองรับ 1-2 ท่าน </p>
+                  <h3>ห้องมาตรฐานใหญ่</h3>
+                  <p>เตียงเดี่ยว 50 ตร.ม วิวสวน <br> รองรับ 5-9 ท่าน </p>
                 </div>
                 <div class="room-info">
-                  <span>590 B/คืน</span>
-                  <button onclick="openModal('ห้องมาตรฐาน','590')">จองเลย</button>
+                  <span>1090 B/คืน</span>
+                  <button onclick="openModal('ห้องมาตรฐานใหญ่','1090')">จองเลย</button>
                 </div>
               </div>
             </div>
 
             <!-- room3 -->
-            <div class="grid-item" data-status="full" data-type="Suite">
+            <div class="grid-item" data-status="full" data-type="Suite" data-cap="4">
               <div class="room-img">
                 <img src="img/hotel.jpg" alt="room-img">
               </div>
@@ -147,6 +148,14 @@
   </main>
 
 
+
+
+  <section class="booking-list-section">
+    <h2>รายการการจองห้องพัก</h2>
+    <div id="booking-list"></div>
+  </section>
+
+  
   <footer>
     <div class="logo">
       <span>StayAlone</span>
@@ -164,8 +173,10 @@
         <button class="modal-close" onclick="CloseModal()">x</button>
       </div>
       <div class="modal-body" id="modal-body">
-        <p class="modal-info" id="modal-info"></p>
-        <p class="modal-price" id="modal-price"></p>
+        <div class="modal-info">รายการจองห้อง</div>
+        <div id="booking-summary"></div>
+        <input type="text" id="customer-name" placeholder="ชื่อผู้จอง">
+        <input type="email" id="customer-email" placeholder="กรอกอีเมล">
         <button class="modal-confirm" id="modal-confirm" onclick="Confirm()">ยืนยันการจอง</button>
       </div>
       <div class="modal-success" id="modal-success">
